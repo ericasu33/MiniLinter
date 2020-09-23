@@ -60,7 +60,10 @@ const sentenceCount = () => {
 // ----- Word Frequency -----//
 const wordFrequency = () => {
   const storyInLowerCase = story.toLowerCase();//change all to lowercase
-  const storyNoSpclChar = storyInLowerCase.replace(/[^a-zA-Z0-9 ]/g,"");
+  const storyNoSpclChar1 = storyInLowerCase.replace(/[^a-zA-Z0-9 ]/g,"");
+  const storyNoSpclChar = storyNoSpclChar1.replace(/  +/g," ");
+
+  console.log(storyNoSpclChar);
   const storyWordsNoSpclChar = storyNoSpclChar.split(" ");
 
  let mostWords = storyWordsNoSpclChar.reduce((acc,current)=>{
